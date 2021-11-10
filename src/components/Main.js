@@ -63,7 +63,7 @@ const Main = (props) => {
               </button>
 
               <button>
-                <img src="/images/article-icon.svg" alt="put images" />
+                <img src="/images/event-icon.svg" alt="put images" />
                 <span>Event</span>
               </button>
 
@@ -84,7 +84,9 @@ const Main = (props) => {
                       <div>
                         <span>{article.actor.title}</span>
                         <span>{article.actor.description}</span>
-                        {/* <span>{article.actor.date.toDate().toLocalDateString()}</span> */}
+                        <span>
+                          {/* {article.actor.date.toDate().toLocalDateString()} */}
+                        </span>
                       </div>
                     </a>
                   </SharedActor>
@@ -102,15 +104,16 @@ const Main = (props) => {
                   <SocialCounts>
                     <li>
                       <button>
-                        <img src="/images/like-emoji" alt="put images" />
-
-                        <img src="/images/clapping-emoji" alt="put images" />
-                        <span>75</span>
+                        <img src="/images/heart-icon.svg" alt="put images" />
+                        <img src="/images/like-emoji.svg" alt="put images" />
+                        <img src="/images/clapping-icon.svg" alt="put images" />
+                        <span>75 -</span>
+                        <span>12 Comments</span>
                       </button>
                     </li>
-                    <li>
-                      <a>{article.comments}</a>
-                    </li>
+                    {/* <li>
+                      <a> 12 Comments</a>
+                    </li> */}
                   </SocialCounts>
                   <SocialAction>
                     <button>
@@ -118,15 +121,15 @@ const Main = (props) => {
                       <span>Like</span>
                     </button>
                     <button>
-                      <img src="/images/comments-icon.svg" alt="put image" />
+                      <img src="/images/comment-icon.svg" alt="put image" />
                       <span>Comments</span>
                     </button>
                     <button>
-                      <img src="/images/Share-icon.svg" alt="put image" />
+                      <img src="/images/share-icon.svg" alt="put image" />
                       <span>Share</span>
                     </button>
                     <button>
-                      <img src="/images/Send-icon.svg" alt="put images" />
+                      <img src="/images/send-icon.svg" alt="put images" />
                       <span>Send</span>
                     </button>
                   </SocialAction>
@@ -178,7 +181,6 @@ const Sharebox = styled(CommonCard)`
     }
     &:first-child {
       display: flex;
-
       align-items: center;
       padding: 8px 16x 0px 16px;
       img {
@@ -203,6 +205,8 @@ const Sharebox = styled(CommonCard)`
       padding-bottom: 4px;
       button {
         img {
+          height: 25px;
+          width: 25px;
           margin: 0 4px 0 -2px;
         }
         span {
@@ -301,11 +305,20 @@ const SocialCounts = styled.ul`
   list-style: none;
   li {
     margin-right: 5px;
-    font-size: 12px;
+    font-size: 16px;
     button {
       display: flex;
       border: none;
       background-color: white;
+      img {
+        height: 30px;
+        width: 30px;
+      }
+      span {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-left: 4px;
+      }
     }
   }
 `;
@@ -324,11 +337,17 @@ const SocialAction = styled.div`
     color: #0a66c2;
     border: none;
     background-color: white;
+    justify-content: space-between;
+    padding-right: 25px;
 
     @media (min-width: 768px) {
       span {
         margin-left: 8px;
       }
+    }
+    img {
+      height: 35px;
+      width: 35px;
     }
   }
 `;
